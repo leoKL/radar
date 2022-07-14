@@ -30,7 +30,7 @@ public class SUBSTRING implements PluginServiceV2 {
         String field = jsonInfo.get(sourceField[0]).toString();
         int start =Integer.parseInt(args[0]);
         int end = Integer.parseInt(args[1]);
-        if (field != null && field.length() > end) {
+        if (field != null && (field.length() > end || field.length() == end)) {
             return field.substring(start, end);
         } else {
             return field;
